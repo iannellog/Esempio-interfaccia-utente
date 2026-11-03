@@ -14,7 +14,9 @@ La matrice viene salvata nel seguente formato:
 import random
 
 
-def genera_matrice(righe, colonne, minimo, massimo):
+def genera_matrice(
+    righe: int, colonne: int, minimo: int, massimo: int
+) -> list[list[int]]:
     """
     Genera una matrice di interi casuali compresi
     tra minimo e massimo (estremi inclusi).
@@ -30,7 +32,7 @@ def genera_matrice(righe, colonne, minimo, massimo):
     return matrice
 
 
-def salva_matrice(matrice, percorso):
+def salva_matrice(matrice: list[list[int]], percorso: str) -> None:
     """
     Salva la matrice in un file di testo.
     La prima riga contiene le dimensioni.
@@ -45,7 +47,7 @@ def salva_matrice(matrice, percorso):
             file.write(" ".join(str(x) for x in riga) + "\n")
 
 
-def acquisisci_parametri():
+def acquisisci_parametri() -> tuple[int, int, int, int, str]:
     righe = int(input("Numero di righe: "))
     colonne = int(input("Numero di colonne: "))
 
@@ -57,7 +59,7 @@ def acquisisci_parametri():
     return righe, colonne, minimo, massimo, percorso
 
 
-def main():
+def main() -> None:
     print("Generazione di una matrice casuale\n")
 
     righe, colonne, minimo, massimo, percorso = acquisisci_parametri()

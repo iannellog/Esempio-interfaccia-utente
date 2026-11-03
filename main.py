@@ -45,9 +45,7 @@ def salva_matrice(matrice, percorso):
             file.write(" ".join(str(x) for x in riga) + "\n")
 
 
-def main():
-    print("Generazione di una matrice casuale\n")
-
+def acquisisci_parametri():
     righe = int(input("Numero di righe: "))
     colonne = int(input("Numero di colonne: "))
 
@@ -55,6 +53,14 @@ def main():
     massimo = int(input("Valore massimo: "))
 
     percorso = input("Percorso del file di destinazione: ")
+
+    return righe, colonne, minimo, massimo, percorso
+
+
+def main():
+    print("Generazione di una matrice casuale\n")
+
+    righe, colonne, minimo, massimo, percorso = acquisisci_parametri()
 
     if righe <= 0 or colonne <= 0:
         print("Errore: le dimensioni devono essere positive.")
